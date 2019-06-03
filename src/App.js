@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  state = {
-    items: [
-      { id: 1, name: "Eggs", complete: false, },
-      {id: 2, name: "Bread", complete: false, },
-      {id: 3, name: "Bacon", complete: false,},
+    state = {
+      items: [
+        {id: 1, name: "Eggs", complete: false, },
+        {id: 2, name: "Bread", complete: false, },
+        {id: 3, name: "Bacon", complete: false, },
     ]
   };
 
   renderItems = () => {
+    //this.state.items
     const { items, } = this.state;
-    return items.map( todo =>
+    return items.map( item =>
       <li key={item.id}>{item.name}</li>
     )
   };
