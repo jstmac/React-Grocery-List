@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import List from './List';
+import GroceryForm from './GroceryForm';
 import logo from './logo.svg';
 import './App.css';
+
 
 class App extends Component {
     state = {
@@ -20,16 +23,23 @@ class App extends Component {
   };
 
     render() {
+      const { items } = this.state;
+
       return (
         <div>
-          <ul>
-            { this.renderItems() }
-          </ul>
+            <GroceryForm />
+            <List name="Grocery List" items={items} /> 
         </div>
-      )
+        
+      );
     }
   }   
 
+  
+    
 
+  
+
+  
 
 export default App;
