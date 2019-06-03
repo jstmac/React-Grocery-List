@@ -2,25 +2,33 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends Component {
+  state = {
+    items: [
+      { id: 1, name: "Eggs", complete: false, },
+      {id: 2, name: "Bread", complete: false, },
+      {id: 3, name: "Bacon", complete: false,},
+    ]
+  };
+
+  renderItems = () => {
+    const { items, } = this.state;
+    return items.map( todo =>
+      <li key={item.id}>{item.name}</li>
+    )
+  };
+
+    render() {
+      return (
+        <div>
+          <ul>
+            { this.renderItems() }
+          </ul>
+        </div>
+      )
+    }
+  }   
+
+
 
 export default App;
