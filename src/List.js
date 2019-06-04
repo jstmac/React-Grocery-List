@@ -1,10 +1,12 @@
 import React from 'react';
+import Item from './Item';
 
-const List = ({ items, name }) => (
+const List = (props)  => (
   <div>
-      <h2>{name}</h2>
+      <h2>{props.name}</h2>
       <ul>
-      { items.map( item => <li key={item.id}>{item.name}</li>) }
+      { props.items.map( item => <Item key={item.id} {...item} itemClick={props.itemClick} /> )}
+      {/* { items.map( item => <Item key={item.id} id={item.id} name={item.name} complete={item.complete} /> )}  */}
    </ul>
  </div>
 )
